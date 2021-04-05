@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script src="./myPromise.js"></script>
+
+<!-- <script>
+    // step1
+    new MyPromise((resolve, reject) =>{
+        setTimeout(()=>{
+            resolve('111111111');
+            console.log('step1')
+        },2000)
+    }).then((res)=>{
+        console.log(res)
+    })
+</script> -->
+
+<!-- <script>
+    // step2
+    new MyPromise((resolve, reject) => {
+       resolve('333')
+    }).then((res) => {
+        console.log(res)
+    })
+</script> -->
+
+<!-- <script>
+    // step3
+    new MyPromise((resolve, reject) => {
+        resolve('333')
+        resolve('333.1')
+    }).then((res) => {
+        console.log(res)
+    })
+</script> -->
+<!-- <script>
+    // step4
+    new MyPromise((resolve, reject) => {
+        resolve('4')
+    }).then((res) => {
+        console.log(res);
+        return '4.1';
+    }).then((res) => {
+        console.log(res)
+    })
+</script> -->
+<!-- <script>
+    // step5
+    new MyPromise((resolve, reject) => {
+        resolve('5')
+    }).then((res) => {
+        console.log(res);
+        return '5.1';
+    })
+    .then()
+    .then((res) => {
+        console.log(res)
+    })
+</script> -->
+<script>
+    // step6
+    new MyPromise((resolve, reject) => {
+        resolve('6')
+    }).then((res) => {
+        console.log(res);
+        return '6.1';
+    }).then(
+            (res)=>{
+                console.log(res);
+                return {
+                    then(r,j) {
+                        r('thenable6.2')
+                    }
+                }
+            }
+    ).then((res) => {
+        console.log(res)
+    })
+</script>
+</html>
